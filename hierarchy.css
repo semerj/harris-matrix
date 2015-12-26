@@ -1,0 +1,24 @@
+g.leaf > rect {
+  stroke: #fff;
+  stroke-width: 1px;
+  opacity: .5;
+}
+
+g.compound > rect {
+  opacity: 0.1;
+}
+
+.node {
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+  fill: none;
+}
+
+.port {
+  stroke: #000;
+  width: 1px;
+  opacity: .6;
+}
