@@ -15,6 +15,7 @@ GRAPHML = dict(
     data  = '{http://graphml.graphdrawing.org/xmlns/graphml}data'
     )
 
+
 def extract_edges(edges):
     '''get all edge data'''
     edge_list = []
@@ -27,6 +28,7 @@ def extract_edges(edges):
                 ))
         edge_list.append(attr_dict)
     return edge_list
+
 
 def get_node_data(node):
     '''extract data from single node'''
@@ -43,6 +45,7 @@ def get_node_data(node):
     gdict['height']      = 10
     return gdict
 
+
 def extract_nodes(nodes):
     '''recusively build node tree'''
     node_list = []
@@ -55,6 +58,7 @@ def extract_nodes(nodes):
                     )
         node_list.append(gdict)
     return node_list
+
 
 def convert2json(filename):
     '''convert all node and edge data into a single object'''
@@ -78,7 +82,11 @@ def convert2json(filename):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Command line utility to convert Harris Matrix Composer-GraphML file to JSON')
+    parser = argparse.ArgumentParser(
+            description='Command line utility to convert \
+                         Harris Matrix Composer-GraphML \
+                         to JSON'
+                         )
     parser.add_argument(
         'filename',
         metavar='filename',
