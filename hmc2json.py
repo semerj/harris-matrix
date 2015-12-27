@@ -7,13 +7,12 @@ from collections import OrderedDict
 
 
 # global variables
-PREFIX = '{http://graphml.graphdrawing.org/xmlns/graphml}'
 GRAPHML = dict(
-    key   = PREFIX + 'key',
-    graph = PREFIX + 'graph',
-    node  = PREFIX + 'node',
-    edge  = PREFIX + 'edge',
-    data  = PREFIX + 'data'
+    key   = '{http://graphml.graphdrawing.org/xmlns/graphml}key',
+    graph = '{http://graphml.graphdrawing.org/xmlns/graphml}graph',
+    node  = '{http://graphml.graphdrawing.org/xmlns/graphml}node',
+    edge  = '{http://graphml.graphdrawing.org/xmlns/graphml}edge',
+    data  = '{http://graphml.graphdrawing.org/xmlns/graphml}data'
     )
 
 def extract_edges(edges):
@@ -33,10 +32,15 @@ def get_node_data(node):
     '''extract data from single node'''
     data = node.find(GRAPHML['data']).find('hmcnode').attrib
     gdict = OrderedDict()
-    gdict['id']     = data['id']
-    gdict['labels'] = [dict(text=gdict['id'])]
-    gdict['width']  = 10
-    gdict['height'] = 10
+    gdict['id']          = data['id']
+    gdict['labels']      = [dict(text=gdict['id'])]
+    gdict['type']        = data['type']
+    gdict['index']       = data['index']
+    gdict['name']        = data['name']
+    gdict['description'] = data['description']
+    gdict['layer']       = data['layer']
+    gdict['width']       = 10
+    gdict['height']      = 10
     return gdict
 
 def extract_nodes(nodes):
