@@ -29,20 +29,22 @@ var layouter = klay.d3kgraph()
       .size([width, height])
       .transformGroup(root)
       .options({
+        algorithm: "de.cau.cs.kieler.klay.layered",
         layoutHierarchy: true,
         intCoordinates: true,
         direction: "DOWN",
         edgeRouting: "ORTHOGONAL",
-        nodeLayering: "NETWORK_SIMPLEX",
-        nodePlace: "BRANDES_KOEPF",
-        fixedAlignment: "NONE",
-        crossMin: "LAYER_SWEEP",
-        algorithm: "de.cau.cs.kieler.klay.layered"
+        // cycleBreaking: "INTERACTIVE", // remove
+        nodeLayering: "NETWORK_SIMPLEX",  // "INTERACTIVE",
+        separateConnComp: false       // remove
+        // crossMin: "LAYER_SWEEP",
+        // nodePlace: "BRANDES_KOEPF",
+        // fixedAlignment: "NONE",
       });
 
+
 // load data and render elements
-d3.json("./data/Sector_D/Sector_D.json", function(error, graph) {
-// d3.json("./hierarchy.json", function(error, graph) {
+d3.json("./PEA.json", function(error, graph) {
 
   layouter.on("finish", function(d) {
 
@@ -60,29 +62,28 @@ d3.json("./data/Sector_D/Sector_D.json", function(error, graph) {
         .attr("viewBox", "0 -5 10 10")
         .attr("refX", 10)
         .attr("refY", 0)
-        .attr("markerWidth", 3)        // marker settings
+        .attr("markerWidth", 5)        // marker settings
         .attr("markerHeight", 5)
         .attr("orient", "auto")
-        .style("fill", "#999")
-        .style("stroke-opacity", 0.6)  // arrowhead color
+        .style("fill", "#000")         // arrowhead color
+        .style("opacity", 0.8)
       .append("svg:path")
         .attr("d", "M0,-5L10,0L0,5");
 
-    // add arrows
+    // add arrows and colors
     var link = linkData.enter()
         .append("path")
         .attr("class", "link")
+        .attr("stroke", function(d) {  // color contemporary edges dashed and red
+          return d.type == "CONTEMPORARY" ? "#FF0000" : "#000";
+        })
+        .style("stroke-dasharray", function(d) {
+          if (d.type == "CONTEMPORARY") { return ("3, 3"); }
+        })
         .attr("d", "M0 0")
-        .attr("marker-end", "url(#end)");
-
-    // add edge labels
-    linkData.enter()
-        .append("text")
-        .attr("x", function(d) { return d.targetPoint.x; })  // position edge labels
-        .attr("y", function(d) { return d.targetPoint.y - 10; })
-        .attr("text-anchor", "middle")
-        .attr("font-size", "4px")
-        .text(function(d) { return d.id; });
+        .attr("marker-end", function(d) {
+          if (d.type != "CONTEMPORARY") { return "url(#end)"; }
+        });
 
     var nodeData = root.selectAll(".node")
         .data(nodes,  function(d) { return d.id; });
@@ -93,22 +94,32 @@ d3.json("./data/Sector_D/Sector_D.json", function(error, graph) {
             return "node compound";
           else
             return "node leaf";
+        })
+        .on("mouseover", function(d) {
+          d3.select("#tooltip")
+            .style("left", (d3.event.pageX + 30) + "px")
+            .style("top", (d3.event.pageY - 30) + "px")
+            .select("#label")
+            .html("<strong>ID:</strong> " + d.id + "<br>" +
+                  "<strong>Name</strong>: " + d.name + "<br>" +
+                  "<strong>Description</strong>: " + d.description + "<br>" +
+                  "<strong>Type</strong>: " + d.type);
+          d3.select("#tooltip").classed("hidden", false);
+        })
+        .on("mouseout", function(d) {
+          d3.select("#tooltip").classed("hidden", true);
         });
 
     var atoms = node.append("rect")
         .attr("width", 10)
         .attr("height", 10);
-        // .attr("x", 12)
-        // .attr("y", 47);
 
     // add node labels
     node.append("text")
-        .attr("x", 2.5)
-        .attr("y", 6.5)
-        // .attr("x", 12 + 2.5)
-        // .attr("y", 47 + 6.5)
+        .attr("x", 1)
+        .attr("y", 7)
         .text(function(d) { return d.id; })
-        .attr("font-size", "4px");
+        .attr("font-size", "6px");
 
     // apply edge routes
     link.transition().attr("d", function(d) {
@@ -124,12 +135,18 @@ d3.json("./data/Sector_D/Sector_D.json", function(error, graph) {
     // apply node positions
     node.transition()
       .attr("transform", function(d) {
-        return "translate(" + (d.x || 0) + " " + (d.y || 0) + ")"
+        return "translate(" + (d.x || 0) + " " + (d.y || 0) + ")";
     });
 
     atoms.transition()
       .attr("width",  function(d) { return d.width; })
       .attr("height", function(d) { return d.height; });
+
+    // remove root node
+    d3.selectAll(".node").each(function(d, i) {
+      if (d.id == "root") { this.remove(); }
+    });
+
   });
 
   layouter.kgraph(graph);
@@ -139,4 +156,3 @@ function redraw() {
   svg.attr("transform", "translate(" + d3.event.translate + ")"
                           + " scale(" + d3.event.scale + ")");
 }
-
