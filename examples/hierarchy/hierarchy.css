@@ -1,0 +1,31 @@
+/* leaf nodes */
+g.leaf > rect {
+  fill: #8AB9FE;
+  /* stroke: #fff; */
+  /* stroke-width: 1px; */
+  opacity: .5;
+}
+
+/* horizons and periods */
+g.compound > rect {
+  fill: #F4F4E6;
+  stroke: #000;
+  stroke-width: 1px;
+  opacity: 0.3;
+}
+
+/* edges */
+.link {
+  stroke: #000;
+  stroke-opacity: 0.8;
+  fill: none;
+}
+
+.node {
+}
+
+.port {
+  stroke: #000;
+  width: 1px;
+  opacity: .6;
+}
