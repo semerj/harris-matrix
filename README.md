@@ -22,9 +22,9 @@ $ bower install klayjs-d3
 
 **Examples:**
 
-- [Sector D](https://semerj.github.io/harris_matrix/examples/sector_d/)
-- [PEA](https://semerj.github.io/harris_matrix/examples/pea/)
-- [A2](https://semerj.github.io/harris_matrix/examples/a2/)
+- [Sector D](https://semerj.github.io/harris-matrix/examples/Sector_D/)
+- [PEA](https://semerj.github.io/harris-matrix/examples/PEA/)
+- [A2](https://semerj.github.io/harris-matrix/examples/A2/)
 
 ## Differences with Harris Matrix Composer
 
