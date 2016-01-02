@@ -21,10 +21,12 @@ def extract_edges(edges):
     edge_list = []
     for edge in edges:
         attr = edge.attrib
+        hmcedge = edge.find(GRAPHML['data']).find('hmcedge').attrib
         attr_dict = OrderedDict((
                 ('id',     attr['id']),
                 ('source', attr['source']),
-                ('target', attr['target'])
+                ('target', attr['target']),
+                ('type',   hmcedge['type'])
                 ))
         edge_list.append(attr_dict)
     return edge_list
