@@ -1,0 +1,425 @@
+{
+  "id": "root",
+  "children": [
+    {
+      "id": "House",
+      "labels": [
+        {
+          "text": "House"
+        }
+      ],
+      "type": "PHASE_GROUP",
+      "index": "13",
+      "name": "",
+      "description": "",
+      "layer": "0",
+      "width": 10,
+      "height": 10,
+      "children": [
+        {
+          "id": "H",
+          "labels": [
+            {
+              "text": "H"
+            }
+          ],
+          "type": "DEPOSIT",
+          "index": "10",
+          "name": "dep_H",
+          "description": "",
+          "layer": "3",
+          "width": 10,
+          "height": 10
+        },
+        {
+          "id": "I",
+          "labels": [
+            {
+              "text": "I"
+            }
+          ],
+          "type": "DEPOSIT",
+          "index": "11",
+          "name": "dep_I",
+          "description": "",
+          "layer": "4",
+          "width": 10,
+          "height": 10
+        },
+        {
+          "id": "J",
+          "labels": [
+            {
+              "text": "J"
+            }
+          ],
+          "type": "DEPOSIT",
+          "index": "12",
+          "name": "dep_J",
+          "description": "",
+          "layer": "5",
+          "width": 10,
+          "height": 10
+        }
+      ]
+    },
+    {
+      "id": "P",
+      "labels": [
+        {
+          "text": "P"
+        }
+      ],
+      "type": "PERIOD_GROUP",
+      "index": "15",
+      "name": "Time of plague",
+      "description": "",
+      "layer": "0",
+      "width": 10,
+      "height": 10,
+      "children": [
+        {
+          "id": "K",
+          "labels": [
+            {
+              "text": "K"
+            }
+          ],
+          "type": "DEPOSIT",
+          "index": "14",
+          "name": "dep_K",
+          "description": "top of a well",
+          "layer": "1",
+          "width": 10,
+          "height": 10
+        },
+        {
+          "id": "L",
+          "labels": [
+            {
+              "text": "L"
+            }
+          ],
+          "type": "DEPOSIT",
+          "index": "16",
+          "name": "dep_L",
+          "description": "bottom of a well",
+          "layer": "2",
+          "width": 10,
+          "height": 10
+        }
+      ]
+    },
+    {
+      "id": "T",
+      "labels": [
+        {
+          "text": "T"
+        }
+      ],
+      "type": "TOP_SURFACE",
+      "index": "0",
+      "name": "Top surface",
+      "description": "",
+      "layer": "0",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "id": "G",
+      "labels": [
+        {
+          "text": "G"
+        }
+      ],
+      "type": "GEOLOGY",
+      "index": "1",
+      "name": "Interface to Geology",
+      "description": "",
+      "layer": "8",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "id": "U",
+      "labels": [
+        {
+          "text": "U"
+        }
+      ],
+      "type": "UNEXCAVATED",
+      "index": "2",
+      "name": "Unexcavated",
+      "description": "",
+      "layer": "7",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "id": "A",
+      "labels": [
+        {
+          "text": "A"
+        }
+      ],
+      "type": "DEPOSIT",
+      "index": "3",
+      "name": "dep_A",
+      "description": "Strat - above_of U - Unexcavated\nStrag - below_of T- Top surface",
+      "layer": "2",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "id": "B",
+      "labels": [
+        {
+          "text": "B"
+        }
+      ],
+      "type": "DEPOSIT",
+      "index": "4",
+      "name": "dep_b",
+      "description": "",
+      "layer": "2",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "id": "C",
+      "labels": [
+        {
+          "text": "C"
+        }
+      ],
+      "type": "DEPOSIT",
+      "index": "5",
+      "name": "dep_C",
+      "description": "",
+      "layer": "4",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "id": "D",
+      "labels": [
+        {
+          "text": "D"
+        }
+      ],
+      "type": "DEPOSIT",
+      "index": "6",
+      "name": "dep_D",
+      "description": "",
+      "layer": "6",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "id": "E",
+      "labels": [
+        {
+          "text": "E"
+        }
+      ],
+      "type": "DEPOSIT",
+      "index": "7",
+      "name": "dep_E",
+      "description": "",
+      "layer": "2",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "id": "F",
+      "labels": [
+        {
+          "text": "F"
+        }
+      ],
+      "type": "DEPOSIT",
+      "index": "8",
+      "name": "dep_G",
+      "description": "",
+      "layer": "4",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "id": "1",
+      "labels": [
+        {
+          "text": "1"
+        }
+      ],
+      "type": "SURFACE",
+      "index": "9",
+      "name": "",
+      "description": "",
+      "layer": "2",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "id": "M",
+      "labels": [
+        {
+          "text": "M"
+        }
+      ],
+      "type": "DEPOSIT",
+      "index": "17",
+      "name": "dep_M",
+      "description": "",
+      "layer": "2",
+      "width": 10,
+      "height": 10
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "U",
+      "target": "G",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e2",
+      "source": "A",
+      "target": "U",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e3",
+      "source": "T",
+      "target": "A",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e4",
+      "source": "C",
+      "target": "D",
+      "type": "LATER"
+    },
+    {
+      "id": "e5",
+      "source": "T",
+      "target": "B",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e6",
+      "source": "B",
+      "target": "C",
+      "type": "LATER"
+    },
+    {
+      "id": "e7",
+      "source": "D",
+      "target": "U",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e8",
+      "source": "B",
+      "target": "C",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e9",
+      "source": "C",
+      "target": "D",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e10",
+      "source": "E",
+      "target": "F",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e11",
+      "source": "T",
+      "target": "E",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e12",
+      "source": "F",
+      "target": "D",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e13",
+      "source": "T",
+      "target": "1",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e14",
+      "source": "1",
+      "target": "H",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e15",
+      "source": "H",
+      "target": "I",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e16",
+      "source": "I",
+      "target": "J",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e17",
+      "source": "T",
+      "target": "K",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e18",
+      "source": "J",
+      "target": "U",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e19",
+      "source": "L",
+      "target": "U",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e20",
+      "source": "K",
+      "target": "L",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e21",
+      "source": "E",
+      "target": "A",
+      "type": "CONTEMPORARY"
+    },
+    {
+      "id": "e22",
+      "source": "T",
+      "target": "M",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e23",
+      "source": "M",
+      "target": "F",
+      "type": "ABOVE"
+    },
+    {
+      "id": "e24",
+      "source": "B",
+      "target": "E",
+      "type": "CONTEMPORARY"
+    }
+  ]
+}
