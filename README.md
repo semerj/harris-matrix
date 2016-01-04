@@ -2,11 +2,12 @@
 
 ## Converting Harris Matrix Composer XML
 
-The command line utility `hmc2json.py`, written in Python 3.5, will convert a Harris Matrix Composer-style GraphML data to [JSON Graph Format](https://rtsys.informatik.uni-kiel.de/confluence/display/KIELER/JSON+Graph+Format). 
+The command line utility `hmc2json.py`, written in Python 3.5, will convert Harris Matrix Composer-style GraphML data to [JSON Graph Format](https://rtsys.informatik.uni-kiel.de/confluence/display/KIELER/JSON+Graph+Format).
 
-Harris Matrix Composer data is exported as a zipped file, which typically contains two `xml` documents: `project.xml` and `matrix.xml`. The latter contains the necessary graph data.
+Data exported from Harris Matrix Composer is packaged as a zip file with two XML documents: `project.xml` and `matrix.xml`. The latter contains the necessary graph data.
 
 ```sh
+$ unzip matrix.hmcx
 $ ./hmc2json.py matrix.xml matrix.json
 ```
 
