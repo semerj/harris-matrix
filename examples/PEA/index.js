@@ -78,7 +78,7 @@ d3.json("./PEA.json", function(error, graph) {
           return d.type == "CONTEMPORARY" ? "#FF0000" : "#000";
         })
         .style("stroke-dasharray", function(d) {
-          if (d.type == "CONTEMPORARY") { return ("3, 3"); }
+          if (d.type == "CONTEMPORARY" || d.type == "LATER") { return ("3, 3"); }
         })
         .attr("d", "M0 0")
         .attr("marker-end", function(d) {
