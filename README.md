@@ -17,6 +17,7 @@ $ ./hmc2json.py matrix.xml matrix.json
 
 ### Examples
 
+- [Demo](https://semerj.github.io/harris-matrix/examples/demo/)
 - [Sector D](https://semerj.github.io/harris-matrix/examples/Sector_D/)
 - [PEA](https://semerj.github.io/harris-matrix/examples/PEA/)
 - [A2](https://semerj.github.io/harris-matrix/examples/A2/)
@@ -28,13 +29,3 @@ To view the visualization, first install the required JS libraries ([D3](https:/
 ```sh
 $ bower install klayjs-d3
 ```
-
-### Differences with Harris Matrix Composer
-
-KLayJS-D3 [does *not* support](http://rtsys.informatik.uni-kiel.de/confluence/questions/14516313/can-klaylayered-consider-previous-node-coordinates#Layering) `"CONTEMPORARY"` (i.e. bidirectional) edges as in Harris Matrix Composer. Example:
-
-![img 1](contemporary.png)
-
-Instead, these visualizations provide undirected, dashed, and colored edges to signify `"CONTEMPORARY"` relationships between nodes. Example:
-
-![img 2](contemporary2.png)
