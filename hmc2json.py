@@ -94,7 +94,7 @@ def parse_arguments():
     parser.add_argument(
         '--infile',
         '-i',
-        nargs=1,
+        nargs='?',
         type=argparse.FileType('r'),
         default=sys.stdin,
         help='File to convert'
@@ -113,5 +113,5 @@ def parse_arguments():
 
 if __name__ == '__main__':
     args = parse_arguments()
-    json_data = xml2json(args.infile[0].read())
+    json_data = xml2json(args.infile.read())
     json.dump(json_data, args.outfile, indent=2)
