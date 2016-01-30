@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import sys
 import json
 import argparse
 import xml.etree.ElementTree as ET
@@ -62,10 +63,10 @@ def extract_nodes(nodes):
     return node_list
 
 
-def convert2json(filename):
+def xml2json(xml):
     '''convert all node and edge data into a single object'''
     # parse xml data
-    tree  = ET.parse(filename)
+    tree = ET.fromstring(xml)
     graph = tree.find(GRAPHML['graph'])
     nodes = graph.findall(GRAPHML['node'])
     edges = graph.findall(GRAPHML['edge'])
@@ -83,27 +84,34 @@ def convert2json(filename):
     return json_data
 
 
-if __name__ == '__main__':
+def parse_arguments():
+    '''add parse arguments'''
     parser = argparse.ArgumentParser(
             description='Command line utility to convert \
                          Harris Matrix Composer-GraphML \
                          to JSON'
                          )
     parser.add_argument(
-        'filename',
-        metavar='filename',
-        type=str,
-        help='XML (HMC-GraphML) file to convert'
+        '--infile',
+        '-i',
+        nargs=1,
+        type=argparse.FileType('r'),
+        default=sys.stdin,
+        help='File to convert'
         )
     parser.add_argument(
-        'outfile',
-        metavar='outfile',
-        type=str,
-        help='Filename to save as JSON'
+        '--outfile',
+        '-o',
+        nargs='?',
+        type=argparse.FileType('w'),
+        default=sys.stdout,
+        help='File to save as JSON'
         )
     args = parser.parse_args()
+    return args
 
-    json_data = convert2json(args.filename)
 
-    with open(args.outfile, 'w') as outfile:
-        json.dump(json_data, outfile, indent=2)
+if __name__ == '__main__':
+    args = parse_arguments()
+    json_data = xml2json(args.infile[0].read())
+    json.dump(json_data, args.outfile, indent=2)
