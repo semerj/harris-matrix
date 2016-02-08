@@ -156,3 +156,9 @@ function redraw() {
   svg.attr("transform", "translate(" + d3.event.translate + ")"
                           + " scale(" + d3.event.scale + ")");
 }
+
+function removeLines() {
+  d3.selectAll(".link").style("stroke-opacity", function(d, i) {
+    if (d.type == "LATER") { return 0; }
+  });
+}
