@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns/graphml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns/graphml http://www.yworks.com/xml/schema/graphml/1.0/graphml-attributes.xsd">
+  <key extension.type="hmc" for="node" id="d0"/>
+  <key extension.type="hmc" for="edge" id="d1"/>
+  <key extension.type="hmc" for="graph" id="d2"/>
+  <key for="graphml" id="d3" yfiles.type="resources"/>
+  <graph edgedefault="directed" id="g1" parse.edges="24" parse.nodes="18" parse.order="free">
+    <node id="House">
+      <graph edgedefault="directed" id="g2">
+        <node id="H">
+          <data key="d2">
+            <hmcnode bookmarked="false" description="" id="H" index="10" layer="3" name="dep_H" type="DEPOSIT" valid="true" x="434.0" y="301.0" xmlns=""/>
+          </data>
+        </node>
+        <node id="I">
+          <data key="d2">
+            <hmcnode bookmarked="false" description="" id="I" index="11" layer="4" name="dep_I" type="DEPOSIT" valid="true" x="434.0" y="381.0" xmlns=""/>
+          </data>
+        </node>
+        <node id="J">
+          <data key="d2">
+            <hmcnode bookmarked="false" description="" id="J" index="12" layer="5" name="dep_J" type="DEPOSIT" valid="true" x="434.0" y="461.0" xmlns=""/>
+          </data>
+        </node>
+        <data key="d2"/>
+      </graph>
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="House" index="13" layer="0" name="" open="true" type="PHASE_GROUP" valid="true" x="418.0" y="268.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="P">
+      <graph edgedefault="directed" id="g3">
+        <node id="K">
+          <data key="d2">
+            <hmcnode bookmarked="false" description="top of a well" id="K" index="14" layer="1" name="dep_K" type="DEPOSIT" valid="true" x="345.0" y="93.0" xmlns=""/>
+          </data>
+        </node>
+        <node id="L">
+          <data key="d2">
+            <hmcnode bookmarked="false" description="bottom of a well" id="L" index="16" layer="2" name="dep_L" type="DEPOSIT" valid="true" x="345.0" y="173.0" xmlns=""/>
+          </data>
+        </node>
+        <data key="d2"/>
+      </graph>
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="P" index="15" layer="0" name="Time of plague" open="true" type="PERIOD_GROUP" valid="true" x="329.0" y="60.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="T">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="T" index="0" layer="0" name="Top surface" type="TOP_SURFACE" valid="true" x="253.5" y="0.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="G">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="G" index="1" layer="8" name="Interface to Geology" type="GEOLOGY" valid="true" x="338.0" y="701.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="U">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="U" index="2" layer="7" name="Unexcavated" type="UNEXCAVATED" valid="true" x="313.0" y="621.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="A">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="Strat - above_of U - Unexcavated&#10;Strag - below_of T- Top surface" id="A" index="3" layer="2" name="dep_A" type="DEPOSIT" valid="true" x="81.0" y="173.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="B">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="B" index="4" layer="2" name="dep_b" type="DEPOSIT" valid="true" x="253.0" y="173.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="C">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="C" index="5" layer="4" name="dep_C" type="DEPOSIT" valid="true" x="253.0" y="381.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="D">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="D" index="6" layer="6" name="dep_D" type="DEPOSIT" valid="true" x="244.0" y="541.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="E">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="E" index="7" layer="2" name="dep_E" type="DEPOSIT" valid="true" x="167.0" y="173.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="F">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="F" index="8" layer="4" name="dep_G" type="DEPOSIT" valid="true" x="158.0" y="381.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="1">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="1" index="9" layer="2" name="" type="SURFACE" valid="true" x="437.0" y="173.0" xmlns=""/>
+      </data>
+    </node>
+    <node id="M">
+      <data key="d2">
+        <hmcnode bookmarked="false" description="" id="M" index="17" layer="2" name="dep_M" type="DEPOSIT" valid="true" x="5.0" y="173.0" xmlns=""/>
+      </data>
+    </node>
+    <edge id="e1" source="U" target="G">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e2" source="A" target="U">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="-30.0" y="-15.0"/>
+          <bend x="99.0" y="591.0"/>
+          <bend x="323.0" y="591.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e3" source="T" target="A">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="-7.5" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+          <bend x="261.0" y="50.0"/>
+          <bend x="99.0" y="50.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e4" source="C" target="D">
+      <data key="d2">
+        <hmcedge type="LATER" valid="true" xmlns="">
+          <source x="-9.0" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e5" source="T" target="B">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="2.5" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e6" source="B" target="C">
+      <data key="d2">
+        <hmcedge type="LATER" valid="true" xmlns="">
+          <source x="-9.0" y="15.0"/>
+          <target x="-9.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e7" source="D" target="U">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="-10.0" y="-15.0"/>
+          <bend x="262.0" y="581.0"/>
+          <bend x="343.0" y="581.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e8" source="B" target="C">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="9.0" y="15.0"/>
+          <target x="9.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e9" source="C" target="D">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="9.0" y="15.0"/>
+          <target x="12.0" y="-15.0"/>
+          <bend x="280.0" y="486.0"/>
+          <bend x="274.0" y="486.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e10" source="E" target="F">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="9.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e11" source="T" target="E">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="-2.5" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+          <bend x="266.0" y="60.0"/>
+          <bend x="185.0" y="60.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e12" source="F" target="D">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="-12.0" y="-15.0"/>
+          <bend x="176.0" y="486.0"/>
+          <bend x="250.0" y="486.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e13" source="T" target="1">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="12.5" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+          <bend x="281.0" y="40.0"/>
+          <bend x="452.0" y="40.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e14" source="1" target="H">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e15" source="H" target="I">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e16" source="I" target="J">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e17" source="T" target="K">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="7.5" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+          <bend x="276.0" y="50.0"/>
+          <bend x="363.0" y="50.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e18" source="J" target="U">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="30.0" y="-15.0"/>
+          <bend x="452.0" y="566.0"/>
+          <bend x="383.0" y="566.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e19" source="L" target="U">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="10.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e20" source="K" target="L">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e21" source="E" target="A">
+      <data key="d2">
+        <hmcedge type="CONTEMPORARY" valid="true" xmlns="">
+          <source x="-18.0" y="0.0"/>
+          <target x="18.0" y="0.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e22" source="T" target="M">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="-12.5" y="15.0"/>
+          <target x="0.0" y="-15.0"/>
+          <bend x="256.0" y="40.0"/>
+          <bend x="23.0" y="40.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e23" source="M" target="F">
+      <data key="d2">
+        <hmcedge type="ABOVE" valid="true" xmlns="">
+          <source x="0.0" y="15.0"/>
+          <target x="-9.0" y="-15.0"/>
+          <bend x="23.0" y="213.0"/>
+          <bend x="119.0" y="213.0"/>
+          <bend x="119.0" y="326.0"/>
+          <bend x="167.0" y="326.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <edge id="e24" source="B" target="E">
+      <data key="d2">
+        <hmcedge type="CONTEMPORARY" valid="true" xmlns="">
+          <source x="-18.0" y="0.0"/>
+          <target x="18.0" y="0.0"/>
+        </hmcedge>
+      </data>
+    </edge>
+    <data key="d2"/>
+  </graph>
+  <data key="d3">
+    <Resources xmlns="http://www.yworks.com/xml/graphml"/>
+  </data>
+</graphml>

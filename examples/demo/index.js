@@ -30,21 +30,18 @@ var layouter = klay.d3kgraph()
       .transformGroup(root)
       .options({
         algorithm: "de.cau.cs.kieler.klay.layered",
+        spacing: 10,
         layoutHierarchy: true,
         intCoordinates: true,
         direction: "DOWN",
         edgeRouting: "ORTHOGONAL",
-        // cycleBreaking: "INTERACTIVE", // remove
-        nodeLayering: "NETWORK_SIMPLEX",  // "INTERACTIVE",
-        separateConnComp: false       // remove
-        // crossMin: "LAYER_SWEEP",
-        // nodePlace: "BRANDES_KOEPF",
-        // fixedAlignment: "NONE",
+        cycleBreaking: "INTERACTIVE",
+        nodeLayering: "INTERACTIVE"
       });
 
 
 // load data and render elements
-d3.json("./demo.json", function(error, graph) {
+d3.json("./demo3.json", function(error, graph) {
 
   layouter.on("finish", function(d) {
 
