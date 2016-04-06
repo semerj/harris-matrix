@@ -34,12 +34,8 @@ var layouter = klay.d3kgraph()
         intCoordinates: true,
         direction: "DOWN",
         edgeRouting: "ORTHOGONAL",
-        // cycleBreaking: "INTERACTIVE", // remove
-        nodeLayering: "NETWORK_SIMPLEX",  // "INTERACTIVE",
-        separateConnComp: false       // remove
-        // crossMin: "LAYER_SWEEP",
-        // nodePlace: "BRANDES_KOEPF",
-        // fixedAlignment: "NONE",
+        nodeLayering: "NETWORK_SIMPLEX",
+        separateConnComp: false
       });
 
 
@@ -54,11 +50,11 @@ d3.json("./Sector_D.json", function(error, graph) {
     var linkData = root.selectAll(".link")
         .data(links, function(d) { return d.id; });
 
-    // build the arrow.
+    // build the arrow end
     svg.append("svg:defs").selectAll("marker")
         .data(["end"])                 // define link/path types
       .enter().append("svg:marker")    // add arrows
-        .attr("id", String)
+        .attr("id", "markerEnd")
         .attr("viewBox", "0 -5 10 10")
         .attr("refX", 10)
         .attr("refY", 0)
@@ -70,19 +66,56 @@ d3.json("./Sector_D.json", function(error, graph) {
       .append("svg:path")
         .attr("d", "M0,-5L10,0L0,5");
 
+    // build arrows for contemporary edge only
+    svg.append("svg:defs").selectAll("marker")
+        .data(["end"])
+      .enter().append("svg:marker")
+        .attr("id", "markerEndContemp")
+        .attr("viewBox", "0 -5 10 10")
+        .attr("refX", 10)
+        .attr("refY", 0)
+        .attr("markerWidth", 5)
+        .attr("markerHeight", 5)
+        .attr("orient", "auto")
+        .style("fill", "#000")
+        .style("opacity", 0.4)
+      .append("svg:path")
+        .attr("d", "M0,-5L10,0L0,5");
+
+  // build arrows for contemporary edge only
+    svg.append("svg:defs").selectAll("marker")
+        .data(["end"])
+      .enter().append("svg:marker")
+        .attr("id", "markerStartContemp")
+        .attr("viewBox", "0 -5 10 10")
+        .attr("refX", 0)
+        .attr("refY", 0)
+        .attr("markerWidth", 5)
+        .attr("markerHeight", 5)
+        .attr("orient", "auto")
+        .style("fill", "#000")
+        .style("opacity", 0.4)
+      .append("svg:path")
+        .attr("d", "M0,0L10,-5L10,5Z");
+
     // add arrows and colors
     var link = linkData.enter()
         .append("path")
         .attr("class", "link")
-        .attr("stroke", function(d) {  // color contemporary edges dashed and red
-          return d.type == "CONTEMPORARY" ? "#FF0000" : "#000";
+        .style("stroke-opacity", function(d) {
+          // decrease opacity of contemporary edges
+          return d.type == "CONTEMPORARY" ? 0.4 : 0.7;
         })
-        .style("stroke-dasharray", function(d) {
+        .style("stroke-dasharray", function(d) {  // convert to dashed lines
           if (d.type == "CONTEMPORARY" || d.type == "LATER") { return ("3, 3"); }
         })
         .attr("d", "M0 0")
         .attr("marker-end", function(d) {
-          if (d.type != "CONTEMPORARY") { return "url(#end)"; }
+          return d.type == "CONTEMPORARY" ? "url(#markerEndContemp)" : "url(#markerEnd)";
+        })
+        .attr("marker-start", function(d) {
+          // add bi-directional arrows only for contemporary edges
+          if (d.type == "CONTEMPORARY") { return "url(#markerStartContemp)"; }
         });
 
     var nodeData = root.selectAll(".node")
