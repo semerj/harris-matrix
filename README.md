@@ -9,9 +9,7 @@ Data exported from Harris Matrix Composer is packaged as a zip file with two XML
 ```sh
 $ unzip matrix.hmcx
 
-$ ./hmc2json.py -i matrix.xml -o matrix.json
-# or
-$ ./hmc2json.py -i matrix.xml > matrix.json
+$ ./hmc2json.py matrix.xml matrix.json
 # or
 $ cat matrix.xml | ./hmc2json.py > matrix.json
 ```

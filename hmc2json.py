@@ -89,29 +89,16 @@ def parse_arguments():
     parser = argparse.ArgumentParser(
             description='Command line utility to convert \
                          Harris Matrix Composer-GraphML \
-                         to JSON'
-                         )
-    parser.add_argument(
-        '--infile',
-        '-i',
-        nargs='?',
-        type=argparse.FileType('r'),
-        default=sys.stdin,
-        help='File to convert'
-        )
-    parser.add_argument(
-        '--outfile',
-        '-o',
-        nargs='?',
-        type=argparse.FileType('w'),
-        default=sys.stdout,
-        help='File to save as JSON'
-        )
+                         to JSON')
+    parser.add_argument('src', nargs='?', type=argparse.FileType('r'),
+                        default=sys.stdin, help='XML file to convert')
+    parser.add_argument('out', nargs='?', type=argparse.FileType('w'),
+                        default=sys.stdout, help='File to save as JSON')
     args = parser.parse_args()
     return args
 
 
 if __name__ == '__main__':
     args = parse_arguments()
-    json_data = xml2json(args.infile.read())
-    json.dump(json_data, args.outfile, indent=2)
+    json_data = xml2json(args.src.read())
+    json.dump(json_data, args.out, indent=2)
